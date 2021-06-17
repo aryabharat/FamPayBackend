@@ -16,25 +16,21 @@ async function getData() {
 }
 
 async function storeData({ data }) {
-    try {
-        let videosData = [];
+    let videosData = [];
 
-        data.items.forEach(e => {
-            videosData.push({
-                video_id: e.id.videoId,
-                title: e.snippet.title,
-                description: e.snippet.description,
-                thumbnail: e.snippet.thumbnails.high.url,
-                channel_id: e.snippet.channelId,
-                channel_title: e.snippet.channelTitle,
-                publish_time: e.snippet.publishTime
-            })
+    data.items.forEach(e => {
+        videosData.push({
+            video_id: e.id.videoId,
+            title: e.snippet.title,
+            description: e.snippet.description,
+            thumbnail: e.snippet.thumbnails.high.url,
+            channel_id: e.snippet.channelId,
+            channel_title: e.snippet.channelTitle,
+            publish_time: e.snippet.publishTime
         })
+    })
 
-        Video.insertMany(videosData, { ordered: false })
-    } catch (err) {
-        console.log(err);
-    }
+    Video.insertMany(videosData, { ordered: false }).catch(err => console.log(err.message))
 }
 
 async function getDataAndStore() {
