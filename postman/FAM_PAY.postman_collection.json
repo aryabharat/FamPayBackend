@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "f7d48a1c-92b1-4fc9-a388-18187addf9ce",
+		"name": "FAM_PAY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET DATA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/data/?page=1&limit=10",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"data",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SEARCH DATA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/data/search?keywords=cricket",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"data",
+						"search"
+					],
+					"query": [
+						{
+							"key": "keywords",
+							"value": "cricket"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

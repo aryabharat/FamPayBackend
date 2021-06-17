@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
     .then(async (result) => {
         console.log("CONNECTED TO MONGODB")
         app.listen(PORT, () => { console.log(`listing to port ${PORT}`) })
-        getDataAndStore();
+        //getDataAndStore();
     })
     .catch(err => console.log(err))
 
